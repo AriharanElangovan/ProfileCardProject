@@ -37,16 +37,17 @@ header{
   border-radius: 5px;
   display: flex;
   gap: 40px;
-  overflow: hidden;
+  overflow-x: scroll;
 }
 .section2 img{
   height: 230px;
   width: 170px;
   border-radius: 8px;
 }
-.imageContainer div{
+.imageContainer .card{
   width: 30%;
   height: 100%;
+  position: relative;
 }
 .starImg{
   height: 15px !important;
@@ -59,7 +60,7 @@ header{
   line-height: 111%;
   margin: 0;
   justify-content: space-between;
-  width: 72%;
+  width: 84%;
 }
 .firstLine{
   font-weight: 300;
@@ -74,4 +75,18 @@ header{
 }
 .secondLine span:nth-of-type(2){
   font-weight: 300;
+}
+.badge{
+  position: absolute !important;
+    top: 3px;
+    left: 5px;
+    max-width: 50% !important;
+    height: 6% !important;
+    background-color: white;
+    border-radius: 2px;
+    font-weight: bold;
+    word-break: break-all;
+    text-align: center;
+    font-size: small;
+    padding: 2px 3px;
 }

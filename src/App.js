@@ -2,10 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import airbnb from './airbnb.png';
 import photogrid from './photogrid.png';
-import katie from './katie.png';
-import wedding from './wedding.png';
-import bike from './bike.png';
-import star from './star.png';
+import Card from './Card.js';
+import data from './Data'
 function Header(){
   return (
     <header>
@@ -20,54 +18,29 @@ function Section1(){
     </section>
   );
 }
+const cardCompArray= data.map(
+  item => {
+    console.log(`item-${JSON.stringify(item)}`);
+    return (
+      <Card 
+      title={item.title} 
+      rating={(Math.round(item.rating * 100) / 100).toFixed(1)} 
+      overall={item.overall} 
+      location={item.location} 
+      starimg={item.starimg} 
+      imagesrc={item.imagesrc}
+      amount={item.amount}
+      spots={item.openSpots}/>
+    )
+  }
+);
 function Section2(){
   return (
     <section className='section2'>
       <h1>Online Experiences</h1>
       <p>Join unique interactive activities led by one-of-a-kind hosts-all without leaving home.</p>
       <div className='imageContainer'>
-        <div>
-          <img src={katie}/>
-          <p className='ratingSection'>
-            <img className='starImg' src={star}/>
-            <span>5.0 </span>
-            <span>(6)-USA</span>
-          </p>
-          <p className='firstLine'>
-            Life lessons with Katie Zaferes
-          </p>
-          <p className='secondLine'>
-            <span>From $136 </span><span>/ person</span>
-          </p>
-        </div>
-        <div>
-          <img src={wedding}/>
-          <p className='ratingSection'>
-            <img className='starImg' src={star}/>
-            <span>5.0 </span>
-            <span>(30)-USA</span>
-          </p>
-          <p className='firstLine'>
-            Learn wedding photography
-          </p>
-          <p className='secondLine'>
-            <span>From $125 </span><span>/ person</span>
-          </p>
-        </div>
-        <div>
-          <img src={bike}/>
-          <p className='ratingSection'>
-            <img className='starImg' src={star}/>
-            <span>5.0 </span>
-            <span>(30)-USA</span>
-          </p>
-          <p className='firstLine'>
-            Group Mountain Biking          
-          </p>
-          <p className='secondLine'>
-            <span>From $50 </span><span>/ person</span>
-          </p>
-        </div>
+        {cardCompArray}
       </div>
     </section>
   );
@@ -83,3 +56,6 @@ function App() {
 }
 
 export default App;
+
+
+
