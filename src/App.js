@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-
+import trollface from './troll-face.png';
+import MemeComponent from './MemeComponent';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <MemeComponent/>
     </div>
   );
 }
-
+function Header(){
+  return (
+    <header>
+      <img src={trollface} />
+      <h2>
+        Meme generator
+      </h2>
+      <h4>React course-project 3</h4>
+    </header>
+  );
+}
 export default App;
